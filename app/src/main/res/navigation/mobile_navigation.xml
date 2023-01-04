@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.app_backlog20.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_ps4"
+        android:name="com.example.app_backlog20.ui.Ps4.Ps4Fragment"
+        android:label="PlayStation 4"
+        tools:layout="@layout/fragment_ps4" />
+
+    <fragment
+        android:id="@+id/nav_XBOX"
+        android:name="com.example.app_backlog20.ui.XBOX.XBOXFragment"
+        android:label="XBOX"
+        tools:layout="@layout/fragment_xbox" />
+    <fragment
+        android:id="@+id/nav_GameAdd"
+        android:name="com.example.app_backlog20.ui.GameAdd.GameAddFragment"
+        android:label="fragment_game_add"
+        tools:layout="@layout/fragment_game_add" />
+</navigation>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="plataforma">
+        <item>PlayStation 4</item>
+        <item>PlayStation 5</item>
+        <item>Xbox One</item>
+        <item>Xbox Series</item>
+        <item>Nintendo Switch</item>
+
+    </string-array>
+
+    <string-array name="estado">
+        <item>Pendiente</item>
+        <item>Completado</item>
+        <item>Platinado</item>
+        <item>Aplazado</item>
+        <item>Abandonado</item>
+    </string-array>
+
+    <string-array name="formato">
+        <item>Físico</item>
+        <item>Digital</item>
+        <item>Suscripción</item>
+    </string-array>
+</resources>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/home"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_ps4"
+            android:icon="@drawable/play"
+            android:title="PlayStation 4" />
+        <item
+            android:id="@+id/nav_XBOX"
+            android:icon="@drawable/xbox"
+            android:title="XBOX" />
+        <item
+            android:id="@+id/gestion"
+            android:title="Gestión de juegos"/>
+        <item
+            android:id="@+id/nav_GameAdd"
+            android:icon="@android:drawable/ic_input_add"
+            android:title="Añadir juego" />
+    </group>
+</menu>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="88dp">
+
+    <TextView
+        android:id="@+id/nombre_juego"
+        android:layout_width="355dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/concert_one"
+        android:text="juego"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/plataforma_juego"
+        android:layout_width="104dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="27dp"
+        android:fontFamily="@font/concert_one"
+        android:text="plataforma"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nombre_juego"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/formato_juego"
+        android:layout_width="88dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/concert_one"
+        android:text="formato"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/plataforma_juego"
+        app:layout_constraintTop_toBottomOf="@+id/nombre_juego"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/estado_juego"
+        android:layout_width="102dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/concert_one"
+        android:text="estado"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.625"
+        app:layout_constraintStart_toEndOf="@+id/formato_juego"
+        app:layout_constraintTop_toBottomOf="@+id/nombre_juego"
+        app:layout_constraintVertical_bias="1.0" />
+</androidx.constraintlayout.widget.ConstraintLayout>
