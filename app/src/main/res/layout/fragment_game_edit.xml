@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fondo_def"
-    tools:context=".ui.Game.GameAddFragment">
+    tools:context=".ui.Game.GameEditFragment">
 
     <TextView
         android:layout_width="224dp"
@@ -13,7 +13,7 @@
         android:layout_marginStart="18dp"
         android:layout_marginTop="28dp"
         android:layout_marginBottom="51dp"
-        android:text="Añadir juego"
+        android:text="Modificar juego"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="28sp"
@@ -126,7 +126,7 @@
         app:layout_constraintVertical_bias="0.147" />
 
     <Button
-        android:id="@+id/addGameButton"
+        android:id="@+id/editGameButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="69dp"

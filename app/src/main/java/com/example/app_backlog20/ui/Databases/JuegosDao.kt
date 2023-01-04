@@ -26,6 +26,9 @@ interface JuegosDao {
     @Query ("SELECT * FROM juego WHERE estado LIKE (:estado)")
     fun filtroEst (estado:String): List<Juego>
 
+    @Query ("SELECT * FROM juego WHERE nombre LIKE (:nombre)" + "AND plataforma LIKE (:plataforma)")
+    fun busqueda (nombre:String, plataforma: String):Juego
+
     @Insert(onConflict = IGNORE)
     fun insert(juego: Juego)
 

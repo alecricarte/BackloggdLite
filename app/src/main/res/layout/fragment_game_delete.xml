@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fondo_def"
-    tools:context=".ui.Game.GameAddFragment">
+    tools:context=".ui.Game.GameEditFragment">
 
     <TextView
         android:layout_width="224dp"
@@ -13,7 +13,7 @@
         android:layout_marginStart="18dp"
         android:layout_marginTop="28dp"
         android:layout_marginBottom="51dp"
-        android:text="Añadir juego"
+        android:text="Borrar juego"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="28sp"
@@ -51,35 +51,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.297" />
 
-    <TextView
-        android:id="@+id/estado"
-        android:layout_width="65dp"
-        android:layout_height="31dp"
-        android:layout_marginStart="16dp"
-        android:text="Estado"
-        android:textColor="@color/black"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/formato"
-        app:layout_constraintEnd_toStartOf="@+id/spinEstado"
-        app:layout_constraintHorizontal_bias="0.056"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/plataforma"
-        app:layout_constraintVertical_bias="0.542" />
-
-    <TextView
-        android:id="@+id/formato"
-        android:layout_width="65dp"
-        android:layout_height="31dp"
-        android:layout_marginEnd="48dp"
-        android:layout_marginBottom="312dp"
-        android:text="Formato"
-        android:textColor="@color/black"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/spinFormato"
-        app:layout_constraintTop_toBottomOf="@+id/plataforma"
-        app:layout_constraintVertical_bias="0.993" />
-
     <EditText
         android:id="@+id/editTextNombre"
         android:layout_width="243dp"
@@ -104,40 +75,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextNombre" />
 
-    <Spinner
-        android:id="@+id/spinEstado"
-        android:layout_width="229dp"
-        android:layout_height="31dp"
-        android:layout_marginEnd="48dp"
-        android:layout_marginBottom="314dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/spinPlataforma"
-        app:layout_constraintVertical_bias="0.424" />
-
-    <Spinner
-        android:id="@+id/spinFormato"
-        android:layout_width="229dp"
-        android:layout_height="31dp"
-        android:layout_marginEnd="48dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/spinEstado"
-        app:layout_constraintVertical_bias="0.147" />
-
     <Button
-        android:id="@+id/addGameButton"
+        android:id="@+id/deleteGameButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="69dp"
-        android:layout_marginBottom="4dp"
-        android:text="Guardar"
+        android:layout_marginTop="44dp"
+        android:text="Borrar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.47"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinFormato"
-        app:layout_constraintVertical_bias="0.427" />
+        app:layout_constraintTop_toBottomOf="@+id/spinPlataforma"
+        app:layout_constraintVertical_bias="0.052" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

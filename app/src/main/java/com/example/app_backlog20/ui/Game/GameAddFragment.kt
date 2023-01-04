@@ -1,24 +1,14 @@
-package com.example.app_backlog20.ui.GameAdd
+package com.example.app_backlog20.ui.Game
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
-import android.widget.Spinner
-import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
-import com.example.app_backlog20.R
-import com.example.app_backlog20.databinding.ActivityMainBinding
 import com.example.app_backlog20.databinding.FragmentGameAddBinding
 import com.example.app_backlog20.ui.Databases.Juego
 import com.example.app_backlog20.ui.Databases.JuegosBaseDatos
-import com.google.android.material.navigation.NavigationView
-import com.google.android.material.snackbar.Snackbar
 
 
 class GameAddFragment: Fragment() {

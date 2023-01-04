@@ -15,7 +15,7 @@
         <item
             android:id="@+id/nav_XBOX"
             android:icon="@drawable/xbox"
-            android:title="XBOX" />
+            android:title="Xbox One" />
         <item
             android:id="@+id/gestion"
             android:title="Gestión de juegos"/>
@@ -23,5 +23,13 @@
             android:id="@+id/nav_GameAdd"
             android:icon="@android:drawable/ic_input_add"
             android:title="Añadir juego" />
+        <item
+            android:id="@+id/nav_GameEdit"
+            android:icon="@android:drawable/ic_input_get"
+            android:title="Modificar juego" />
+        <item
+            android:id="@+id/nav_GameDelete"
+            android:icon="@android:drawable/ic_input_delete"
+            android:title="Borrar juego" />
     </group>
 </menu>

@@ -20,11 +20,21 @@
     <fragment
         android:id="@+id/nav_XBOX"
         android:name="com.example.app_backlog20.ui.XBOX.XBOXFragment"
-        android:label="XBOX"
+        android:label="Xbox One"
         tools:layout="@layout/fragment_xbox" />
     <fragment
         android:id="@+id/nav_GameAdd"
-        android:name="com.example.app_backlog20.ui.GameAdd.GameAddFragment"
-        android:label="fragment_game_add"
+        android:name="com.example.app_backlog20.ui.Game.GameAddFragment"
+        android:label="Añadir juego"
         tools:layout="@layout/fragment_game_add" />
+    <fragment
+        android:id="@+id/nav_GameEdit"
+        android:name="com.example.app_backlog20.ui.Game.GameEditFragment"
+        android:label="Modificar juego"
+        tools:layout="@layout/fragment_game_edit" />
+    <fragment
+        android:id="@+id/nav_GameDelete"
+        android:name="com.example.app_backlog20.ui.Game.GameDeleteFragment"
+        android:label="Borrar juego"
+        tools:layout="@layout/fragment_game_delete"/>
 </navigation>
