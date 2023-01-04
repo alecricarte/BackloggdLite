@@ -32,7 +32,9 @@ class GameEditFragment: Fragment() {
 
         val baseDatos = JuegosBaseDatos.getBaseDatos(requireContext())
 
-
+        val nombres = ArrayAdapter(requireActivity(), R.layout.simple_spinner_item, baseDatos.juegosDao().listNombre())
+        nombres.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        binding.spinNombre.adapter = nombres
 
         val datosPlataforma =
             arrayOf("PlayStation 4","Xbox One", "Nintendo Switch")
