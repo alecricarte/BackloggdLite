@@ -8,16 +8,15 @@
     tools:context=".ui.Game.GameEditFragment">
 
     <TextView
+        android:id="@+id/textView7"
         android:layout_width="224dp"
         android:layout_height="50dp"
         android:layout_marginStart="18dp"
         android:layout_marginTop="28dp"
-        android:layout_marginBottom="51dp"
         android:text="Modificar juego"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="28sp"
-        app:layout_constraintBottom_toTopOf="@+id/editTextNombre"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -26,13 +25,13 @@
         android:id="@+id/nombre"
         android:layout_width="65dp"
         android:layout_height="31dp"
-        android:layout_marginEnd="36dp"
+        android:layout_marginStart="16dp"
         android:layout_marginBottom="88dp"
         android:text="Nombre"
         android:textColor="@color/black"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="@+id/plataforma"
-        app:layout_constraintEnd_toStartOf="@+id/editTextNombre"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
@@ -80,29 +79,15 @@
         app:layout_constraintTop_toBottomOf="@+id/plataforma"
         app:layout_constraintVertical_bias="0.993" />
 
-    <EditText
-        android:id="@+id/editTextNombre"
-        android:layout_width="243dp"
-        android:layout_height="37dp"
-        android:layout_marginTop="120dp"
-        android:layout_marginEnd="48dp"
-        android:ems="10"
-        android:hint="Escribe el nombre aquí"
-        android:inputType="textPersonName"
-        android:textColor="@color/black"
-        android:textColorHint="@color/black"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <Spinner
         android:id="@+id/spinPlataforma"
         android:layout_width="229dp"
         android:layout_height="31dp"
-        android:layout_marginStart="132dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="208dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.692"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNombre" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
         android:id="@+id/spinEstado"
@@ -138,6 +123,31 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinFormato"
         app:layout_constraintVertical_bias="0.427" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="29dp"
+        android:layout_marginBottom="74dp"
+        android:text="Masterizado"
+        app:layout_constraintBottom_toTopOf="@+id/editGameButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinFormato" />
+
+    <Spinner
+        android:id="@+id/spinNombre"
+        android:layout_width="231dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="43dp"
+        app:layout_constraintBottom_toTopOf="@+id/spinPlataforma"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/nombre"
+        app:layout_constraintTop_toBottomOf="@+id/textView7"
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -33,7 +33,7 @@ class GameAddFragment: Fragment() {
         val baseDatos = JuegosBaseDatos.getBaseDatos(requireContext())
 
 
-        val datosPlataforma = arrayOf("PlayStation 4", "PlayStation 5", "Xbox One", "Xbox Series", "Nintendo Switch")
+        val datosPlataforma = arrayOf("PlayStation 4", "Xbox One", "Nintendo Switch")
         val plataforma =  ArrayAdapter(requireActivity(), android.R.layout.simple_spinner_item, datosPlataforma)
         plataforma.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         binding.spinPlataforma.adapter = plataforma

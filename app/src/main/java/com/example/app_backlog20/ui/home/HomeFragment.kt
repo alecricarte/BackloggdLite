@@ -39,7 +39,7 @@ class HomeFragment : Fragment() {
         //for (i in lista) println(i)
 
 
-        val datosFiltro = arrayOf("Pendiente", "Completado", "Platinado", "Aplazado", "Abandonado")
+        val datosFiltro = arrayOf("Pendiente", "Completado", "Aplazado", "Abandonado")
         val filtro =  ArrayAdapter(requireActivity(), android.R.layout.simple_spinner_item, datosFiltro)
         filtro.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         binding.spinnerFiltro.adapter = filtro

@@ -33,8 +33,9 @@ class GameEditFragment: Fragment() {
         val baseDatos = JuegosBaseDatos.getBaseDatos(requireContext())
 
 
+
         val datosPlataforma =
-            arrayOf("PlayStation 4", "PlayStation 5", "Xbox One", "Xbox Series", "Nintendo Switch")
+            arrayOf("PlayStation 4","Xbox One", "Nintendo Switch")
         val plataforma =
             ArrayAdapter(requireActivity(), R.layout.simple_spinner_item, datosPlataforma)
         plataforma.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -55,13 +56,13 @@ class GameEditFragment: Fragment() {
 
 
         binding.editGameButton.setOnClickListener() {
-            val nombre = binding.editTextNombre.text.toString().trim()
+            val nombre = binding.spinNombre.selectedItem.toString()
             val datoPlataforma: String = binding.spinPlataforma.selectedItem.toString()
             val datoEstado: String = binding.spinEstado.selectedItem.toString()
             val datoFormato: String = binding.spinFormato.selectedItem.toString()
             val juego = Juego(nombre, datoPlataforma, datoEstado, datoFormato)
             baseDatos.juegosDao().update(juego)
-            binding.editTextNombre.getText().clear()
+
         }
         return root
     }

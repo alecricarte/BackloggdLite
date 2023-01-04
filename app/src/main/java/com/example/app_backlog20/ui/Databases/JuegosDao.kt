@@ -29,6 +29,9 @@ interface JuegosDao {
     @Query ("SELECT * FROM juego WHERE nombre LIKE (:nombre)" + "AND plataforma LIKE (:plataforma)")
     fun busqueda (nombre:String, plataforma: String):Juego
 
+    @Query ("SELECT nombre FROM juego")
+    fun listNombre (): List<String>
+
     @Insert(onConflict = IGNORE)
     fun insert(juego: Juego)
 

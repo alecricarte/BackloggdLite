@@ -9,10 +9,11 @@ data class Juego (
     @ColumnInfo(name = "nombre") val nombre:String,
     @ColumnInfo(name = "plataforma")val plataforma:String,
     @ColumnInfo(name = "estado")val estado:String,
-    @ColumnInfo(name = "formato")val formato:String
+    @ColumnInfo(name = "formato")val formato:String,
+
 
         ){
     constructor(juego: Juego) : this(juego.nombre!!,
-        juego.plataforma!!, juego.estado, juego.formato )
+        juego.plataforma!!, juego.estado, juego.formato)
 }
 

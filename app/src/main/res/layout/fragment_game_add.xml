@@ -139,5 +139,17 @@
         app:layout_constraintTop_toBottomOf="@+id/spinFormato"
         app:layout_constraintVertical_bias="0.427" />
 
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="29dp"
+        android:layout_marginBottom="74dp"
+        android:text="Masterizado"
+        app:layout_constraintBottom_toTopOf="@+id/addGameButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinFormato" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

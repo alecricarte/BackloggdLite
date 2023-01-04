@@ -32,6 +32,9 @@ class GameDeleteFragment: Fragment() {
 
         val baseDatos = JuegosBaseDatos.getBaseDatos(requireContext())
 
+        val nombres = ArrayAdapter(requireActivity(), R.layout.simple_spinner_item, baseDatos.juegosDao().listNombre())
+        nombres.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        binding.spinNombre.adapter = nombres
 
         val datosPlataforma =
             arrayOf("PlayStation 4", "Xbox One", "Nintendo Switch")
@@ -43,11 +46,10 @@ class GameDeleteFragment: Fragment() {
 
 
         binding.deleteGameButton.setOnClickListener() {
-            val nombre = binding.editTextNombre.text.toString().trim()
+            val nombre = binding.spinNombre.selectedItem.toString()
             val datoPlataforma: String = binding.spinPlataforma.selectedItem.toString()
             val juego = baseDatos.juegosDao().busqueda(nombre, datoPlataforma)
             baseDatos.juegosDao().delete(juego)
-            binding.editTextNombre.getText().clear()
         }
         return root
     }
