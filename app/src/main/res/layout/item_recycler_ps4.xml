@@ -3,16 +3,17 @@
     android:layout_width="match_parent"
     android:layout_height="88dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <TextView
         android:id="@+id/nombre_juego"
         android:layout_width="355dp"
         android:layout_height="29dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="4dp"
         android:fontFamily="@font/concert_one"
-        android:textColor="@color/white"
         android:text="juego"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.071"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

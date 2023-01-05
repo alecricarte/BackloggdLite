@@ -36,7 +36,7 @@ class Ps4Fragment : Fragment() {
 
         val datosFiltro = arrayOf("Pendiente", "Completado", "Platinado", "Aplazado", "Abandonado")
         val filtro =  ArrayAdapter(requireActivity(), R.layout.simple_spinner_item, datosFiltro)
-        filtro.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        filtro.setDropDownViewResource(R.layout.simple_spinner_dropdown_item)
         binding.spinnerFiltro.adapter = filtro
         var indOpcionFiltro:Int = binding.spinnerFiltro.selectedItemPosition
         var opcionFiltro:String = datosFiltro.get(indOpcionFiltro)

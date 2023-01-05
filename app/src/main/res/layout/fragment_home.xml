@@ -120,29 +120,24 @@
         android:id="@+id/recyclerView"
         android:layout_width="373dp"
         android:layout_height="362dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="1dp"
+        android:layout_marginBottom="76dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.534"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerFiltro"
-        app:layout_constraintVertical_bias="0.0"
         tools:listitem="@layout/item_recycler_home" />
 
     <Spinner
         android:id="@+id/spinnerFiltro"
         android:layout_width="235dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="461dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        android:layout_height="21dp"
+        android:layout_marginEnd="44dp"
+        android:layout_marginBottom="17dp"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerView"
+        app:layout_constraintEnd_toStartOf="@+id/buttonFiltro"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/textView"
@@ -177,8 +172,8 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="64dp"
+        android:layout_height="14dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="59dp"
         android:layout_marginBottom="49dp"
@@ -227,15 +222,15 @@
         android:textSize="12dp"
         app:layout_constraintBottom_toTopOf="@+id/spinnerFiltro"
         app:layout_constraintEnd_toStartOf="@+id/juegosAbandonados" />
+
     <Button
         android:id="@+id/buttonFiltro"
         android:layout_width="95dp"
         android:layout_height="38dp"
-        android:layout_marginStart="82dp"
-        android:layout_marginTop="232dp"
+        android:layout_marginEnd="20dp"
         android:text="Filtrar"
         app:layout_constraintBottom_toTopOf="@+id/recyclerView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/spinnerFiltro"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>
