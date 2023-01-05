@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.app_backlog20.databinding.FragmentGameEditBinding
 import com.example.app_backlog20.ui.Databases.Juego
@@ -32,27 +33,35 @@ class GameEditFragment: Fragment() {
 
         val baseDatos = JuegosBaseDatos.getBaseDatos(requireContext())
 
-        val nombres = ArrayAdapter(requireActivity(), R.layout.simple_spinner_item, baseDatos.juegosDao().listNombre())
+        val listNombre:MutableList<String> = baseDatos.juegosDao().listNombre()
+        listNombre.add(0,"Escoge un juego...")
+        val nombres = ArrayAdapter(requireActivity(), R.layout.simple_spinner_item, listNombre)
         nombres.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        nombres.isEnabled(0)
         binding.spinNombre.adapter = nombres
 
         val datosPlataforma =
-            arrayOf("PlayStation 4","Xbox One", "Nintendo Switch")
+            arrayOf("Escoge la plataforma...","PlayStation 4","Xbox One", "Nintendo Switch")
         val plataforma =
             ArrayAdapter(requireActivity(), R.layout.simple_spinner_item, datosPlataforma)
         plataforma.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        plataforma.isEnabled(0)
         binding.spinPlataforma.adapter = plataforma
 
 
-        val datosEstado = arrayOf("Pendiente", "Completado", "Aplazado", "Abandonado")
+
+        val datosEstado = arrayOf("Escoge un estado...","Pendiente", "Completado", "Aplazado", "Abandonado")
         val estado = ArrayAdapter(requireActivity(), R.layout.simple_spinner_item, datosEstado)
         estado.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        estado.isEnabled(0)
+
         binding.spinEstado.adapter = estado
 
 
-        val datosFormato = arrayOf("Físico", "Digital", "Suscripción")
+        val datosFormato = arrayOf("Escoge un formato...", "Físico", "Digital", "Suscripción")
         val formato = ArrayAdapter(requireActivity(), R.layout.simple_spinner_item, datosFormato)
         formato.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        formato.isEnabled(0)
         binding.spinFormato.adapter = formato
 
 
@@ -63,8 +72,19 @@ class GameEditFragment: Fragment() {
             val datoEstado: String = binding.spinEstado.selectedItem.toString()
             val datoFormato: String = binding.spinFormato.selectedItem.toString()
             val juego = Juego(nombre, datoPlataforma, datoEstado, datoFormato)
-            baseDatos.juegosDao().update(juego)
+            if (datoEstado == datosEstado.get(0) || nombre == nombres.getItem(0) ||
+                datoPlataforma == datosPlataforma.get(0) || datoFormato == datosFormato.get(0)) {
+                Toast.makeText(requireContext(), "Los datos no son válidos", Toast.LENGTH_SHORT)
+            }
+            else{
+                baseDatos.juegosDao().update(juego)
+                binding.spinNombre.setSelection(0)
+                binding.spinEstado.setSelection(0)
+                binding.spinPlataforma.setSelection(0)
+                binding.spinFormato.setSelection(0)
+                Toast.makeText(requireContext(), "Se han actualizado los datos", Toast.LENGTH_SHORT)
 
+            }
         }
         return root
     }

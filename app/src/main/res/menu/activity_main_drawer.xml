@@ -17,6 +17,10 @@
             android:icon="@drawable/xbox"
             android:title="Xbox One" />
         <item
+            android:id="@+id/nav_Switch"
+            android:icon="@drawable/nintendo_switch_logo"
+            android:title="Nintendo Switch"/>
+        <item
             android:id="@+id/gestion"
             android:title="Gestión de juegos"/>
         <item

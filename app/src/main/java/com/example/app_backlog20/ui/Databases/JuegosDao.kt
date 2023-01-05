@@ -30,7 +30,7 @@ interface JuegosDao {
     fun busqueda (nombre:String, plataforma: String):Juego
 
     @Query ("SELECT nombre FROM juego")
-    fun listNombre (): List<String>
+    fun listNombre (): MutableList<String>
 
     @Insert(onConflict = IGNORE)
     fun insert(juego: Juego)

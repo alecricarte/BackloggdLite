@@ -63,6 +63,14 @@ class Ps4Fragment : Fragment() {
         ps4List.adapter = ps4Adapter
         ps4Adapter.juegos = baseDatos.juegosDao().filtroPlat("PlayStation 4")
         ps4List.layoutManager = LinearLayoutManager(requireContext())
+
+        binding.buttonFiltro.setOnClickListener(){
+            val estado:String = binding.spinnerFiltro.selectedItem.toString()
+            if (estado=="Todos") ps4Adapter.juegos = baseDatos.juegosDao().getAll()
+            else ps4Adapter.juegos = baseDatos.juegosDao().filtroEst(estado)
+
+            ps4List.layoutManager = LinearLayoutManager(requireContext())
+        }
         return root
 
 

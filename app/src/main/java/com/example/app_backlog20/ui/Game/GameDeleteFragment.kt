@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.app_backlog20.databinding.FragmentGameDeleteBinding
 import com.example.app_backlog20.ui.Databases.Juego
@@ -32,12 +33,15 @@ class GameDeleteFragment: Fragment() {
 
         val baseDatos = JuegosBaseDatos.getBaseDatos(requireContext())
 
-        val nombres = ArrayAdapter(requireActivity(), R.layout.simple_spinner_item, baseDatos.juegosDao().listNombre())
+        val listNombre:MutableList<String> = baseDatos.juegosDao().listNombre()
+        listNombre.add(0,"Escoge un juego...")
+        var nombres = ArrayAdapter(requireActivity(), R.layout.simple_spinner_item, listNombre)
         nombres.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        nombres.isEnabled(0)
         binding.spinNombre.adapter = nombres
 
         val datosPlataforma =
-            arrayOf("PlayStation 4", "Xbox One", "Nintendo Switch")
+            arrayOf("Escoge la plataforma","PlayStation 4", "Xbox One", "Nintendo Switch")
         val plataforma =
             ArrayAdapter(requireActivity(), R.layout.simple_spinner_item, datosPlataforma)
         plataforma.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -49,8 +53,22 @@ class GameDeleteFragment: Fragment() {
             val nombre = binding.spinNombre.selectedItem.toString()
             val datoPlataforma: String = binding.spinPlataforma.selectedItem.toString()
             val juego = baseDatos.juegosDao().busqueda(nombre, datoPlataforma)
-            baseDatos.juegosDao().delete(juego)
+            if ( nombre == nombres.getItem(0) || datoPlataforma == datosPlataforma.get(0)) {
+                Toast.makeText(requireContext(), "Los datos no son válidos", Toast.LENGTH_SHORT)
+
+            }
+            else {
+                baseDatos.juegosDao().delete(juego)
+                nombres = ArrayAdapter(requireActivity(), R.layout.simple_spinner_item, baseDatos.juegosDao().listNombre())
+                nombres.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+                binding.spinNombre.adapter = nombres
+                binding.spinNombre.setSelection(0)
+                binding.spinPlataforma.setSelection(0)
+                Toast.makeText(requireContext(), "Se han actualizado los datos", Toast.LENGTH_SHORT)
+
+            }
         }
+
         return root
     }
 }

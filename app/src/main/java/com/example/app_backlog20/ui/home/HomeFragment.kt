@@ -39,7 +39,7 @@ class HomeFragment : Fragment() {
         //for (i in lista) println(i)
 
 
-        val datosFiltro = arrayOf("Pendiente", "Completado", "Aplazado", "Abandonado")
+        val datosFiltro = arrayOf("Todos","Pendiente", "Completado", "Aplazado", "Abandonado")
         val filtro =  ArrayAdapter(requireActivity(), android.R.layout.simple_spinner_item, datosFiltro)
         filtro.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         binding.spinnerFiltro.adapter = filtro
@@ -76,7 +76,9 @@ class HomeFragment : Fragment() {
 
         binding.buttonFiltro.setOnClickListener(){
             val estado:String = binding.spinnerFiltro.selectedItem.toString()
-            homeAdapter.juegos = baseDatos.juegosDao().filtroEst(estado)
+            if (estado=="Todos") homeAdapter.juegos = baseDatos.juegosDao().getAll()
+            else homeAdapter.juegos = baseDatos.juegosDao().filtroEst(estado)
+
             homeList.layoutManager = LinearLayoutManager(requireContext())
         }
         return root

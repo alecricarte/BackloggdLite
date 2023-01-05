@@ -1,4 +1,4 @@
-package com.example.app_backlog20.ui.XBOX
+package com.example.app_backlog20.ui.Switch
 
 import android.R
 import android.os.Bundle
@@ -6,18 +6,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.app_backlog20.databinding.FragmentSwitchBinding
 import com.example.app_backlog20.databinding.FragmentXboxBinding
 import com.example.app_backlog20.ui.Databases.JuegosBaseDatos
-import com.example.app_backlog20.ui.Ps4.Ps4Adapter
+import com.example.app_backlog20.ui.XBOX.XOneAdapter
 
-class XBOXFragment : Fragment() {
+class SwitchFragment : Fragment() {
 
-    private var _binding: FragmentXboxBinding? = null
+    private var _binding: FragmentSwitchBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -29,12 +28,12 @@ class XBOXFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        _binding = FragmentXboxBinding.inflate(inflater, container, false)
+        _binding = FragmentSwitchBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         val baseDatos: JuegosBaseDatos = JuegosBaseDatos.getBaseDatos(requireContext())
 
-        val datosFiltro = arrayOf("Pendiente", "Completado", "Platinado", "Aplazado", "Abandonado")
+        val datosFiltro = arrayOf("Todos", "Pendiente", "Completado", "Platinado", "Aplazado", "Abandonado")
         val filtro =  ArrayAdapter(requireActivity(), R.layout.simple_spinner_item, datosFiltro)
         filtro.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         binding.spinnerFiltro.adapter = filtro
@@ -44,13 +43,13 @@ class XBOXFragment : Fragment() {
 
 
 
-        var plataforma = "Xbox One"
-        var juegosTotales:Int? = baseDatos.juegosDao().filtroPlatCont("Xbox One")
-        var juegosCompletados:Int? = baseDatos.juegosDao().filtroJuegoPlat("Completado", "Xbox One")
-        var juegosPlatinados:Int? = baseDatos.juegosDao().filtroJuegoPlat("Platinado", "Xbox One") //Son los juegos que se ha obtenido el 100% de los trofeos
-        var juegosPendientes:Int? = baseDatos.juegosDao().filtroJuegoPlat("Pendiente", "Xbox One")
-        var juegosAplazados:Int? = baseDatos.juegosDao().filtroJuegoPlat("Aplazado", "Xbox One")
-        var juegosAbandonados = baseDatos.juegosDao().filtroJuegoPlat("Abandonado", "Xbox One")
+        var plataforma = "Nintendo Switch"
+        var juegosTotales:Int? = baseDatos.juegosDao().filtroPlatCont("Nintendo Switch")
+        var juegosCompletados:Int? = baseDatos.juegosDao().filtroJuegoPlat("Completado", "Nintendo Switch")
+        var juegosPlatinados:Int? = baseDatos.juegosDao().filtroJuegoPlat("Platinado", "Nintendo Switch") //Son los juegos que se ha obtenido el 100% de los trofeos
+        var juegosPendientes:Int? = baseDatos.juegosDao().filtroJuegoPlat("Pendiente", "Nintendo Switch")
+        var juegosAplazados:Int? = baseDatos.juegosDao().filtroJuegoPlat("Aplazado", "Nintendo Switch")
+        var juegosAbandonados = baseDatos.juegosDao().filtroJuegoPlat("Abandonado", "Nintendo Switch")
 
 
         binding.nombreUsuario.text = plataforma
@@ -61,18 +60,18 @@ class XBOXFragment : Fragment() {
         binding.juegosPendientes.text = juegosPendientes.toString()
         binding.juegosAbandonados.text = juegosAbandonados.toString()
 
-        val xoneList: RecyclerView = binding.recyclerView
-        val xoneAdapter = XOneAdapter()
-        xoneList.adapter = xoneAdapter
-        xoneAdapter.juegos = baseDatos.juegosDao().filtroPlat("Xbox One")
-        xoneList.layoutManager = LinearLayoutManager(requireContext())
+        val switchList: RecyclerView = binding.recyclerView
+        val switchAdapter = XOneAdapter()
+        switchList.adapter = switchAdapter
+        switchAdapter.juegos = baseDatos.juegosDao().filtroPlat("Nintendo Switch")
+        switchList.layoutManager = LinearLayoutManager(requireContext())
 
         binding.buttonFiltro.setOnClickListener(){
             val estado:String = binding.spinnerFiltro.selectedItem.toString()
-            if (estado=="Todos") xoneAdapter.juegos = baseDatos.juegosDao().getAll()
-            else xoneAdapter.juegos = baseDatos.juegosDao().filtroEst(estado)
+            if (estado=="Todos") switchAdapter.juegos = baseDatos.juegosDao().getAll()
+            else switchAdapter.juegos = baseDatos.juegosDao().filtroEst(estado)
 
-            xoneList.layoutManager = LinearLayoutManager(requireContext())
+            switchList.layoutManager = LinearLayoutManager(requireContext())
         }
         return root
     }

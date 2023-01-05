@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity() {
         appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.nav_home, R.id.nav_ps4, R.id.nav_XBOX, R.id.nav_GameAdd, R.id.nav_GameEdit,
-                R.id.nav_GameDelete
+                R.id.nav_GameDelete, R.id.nav_Switch
             ), drawerLayout
         )
 
