@@ -33,11 +33,10 @@ class GameDeleteFragment: Fragment() {
 
         val baseDatos = JuegosBaseDatos.getBaseDatos(requireContext())
 
-        val listNombre:MutableList<String> = baseDatos.juegosDao().listNombre()
+        var listNombre:MutableList<String> = baseDatos.juegosDao().listNombre()
         listNombre.add(0,"Escoge un juego...")
         var nombres = ArrayAdapter(requireActivity(), R.layout.simple_spinner_item, listNombre)
         nombres.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        nombres.isEnabled(0)
         binding.spinNombre.adapter = nombres
 
         val datosPlataforma =
@@ -59,7 +58,9 @@ class GameDeleteFragment: Fragment() {
             }
             else {
                 baseDatos.juegosDao().delete(juego)
-                nombres = ArrayAdapter(requireActivity(), R.layout.simple_spinner_item, baseDatos.juegosDao().listNombre())
+                listNombre =baseDatos.juegosDao().listNombre()
+                listNombre.add(0,"Escoge un juego...")
+                nombres = ArrayAdapter(requireActivity(), R.layout.simple_spinner_item, listNombre)
                 nombres.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
                 binding.spinNombre.adapter = nombres
                 binding.spinNombre.setSelection(0)
