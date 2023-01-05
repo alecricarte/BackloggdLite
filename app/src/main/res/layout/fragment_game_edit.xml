@@ -8,28 +8,14 @@
     tools:context=".ui.Game.GameEditFragment">
 
     <TextView
-        android:id="@+id/textView7"
-        android:layout_width="224dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="28dp"
-        android:text="Modificar juego"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="28sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
         android:id="@+id/nombre"
         android:layout_width="65dp"
         android:layout_height="31dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="20dp"
         android:layout_marginBottom="88dp"
         android:text="Nombre"
         android:textColor="@color/black"
-        android:textSize="14sp"
+        android:textSize="16dp"
         app:layout_constraintBottom_toBottomOf="@+id/plataforma"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -37,33 +23,31 @@
 
     <TextView
         android:id="@+id/plataforma"
-        android:layout_width="76dp"
-        android:layout_height="29dp"
-        android:layout_marginStart="16dp"
+        android:layout_width="91dp"
+        android:layout_height="36dp"
         android:text="Plataforma"
         android:textColor="@color/black"
-        android:textSize="14sp"
+        android:textSize="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/spinPlataforma"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.457"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.297" />
+        app:layout_constraintVertical_bias="0.214" />
 
     <TextView
         android:id="@+id/estado"
         android:layout_width="65dp"
         android:layout_height="31dp"
-        android:layout_marginStart="16dp"
         android:text="Estado"
         android:textColor="@color/black"
-        android:textSize="14sp"
+        android:textSize="16dp"
         app:layout_constraintBottom_toTopOf="@+id/formato"
         app:layout_constraintEnd_toStartOf="@+id/spinEstado"
-        app:layout_constraintHorizontal_bias="0.056"
+        app:layout_constraintHorizontal_bias="0.289"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/plataforma"
-        app:layout_constraintVertical_bias="0.542" />
+        app:layout_constraintVertical_bias="0.451" />
 
     <TextView
         android:id="@+id/formato"
@@ -73,19 +57,19 @@
         android:layout_marginBottom="312dp"
         android:text="Formato"
         android:textColor="@color/black"
-        android:textSize="14sp"
+        android:textSize="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/spinFormato"
         app:layout_constraintTop_toBottomOf="@+id/plataforma"
-        app:layout_constraintVertical_bias="0.993" />
+        app:layout_constraintVertical_bias="0.758" />
 
     <Spinner
         android:id="@+id/spinPlataforma"
         android:layout_width="229dp"
         android:layout_height="31dp"
-        android:layout_marginTop="208dp"
+        android:layout_marginTop="152dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.692"
+        app:layout_constraintHorizontal_bias="0.736"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -98,7 +82,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/spinPlataforma"
-        app:layout_constraintVertical_bias="0.424" />
+        app:layout_constraintVertical_bias="0.285" />
 
     <Spinner
         android:id="@+id/spinFormato"
@@ -108,7 +92,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/spinEstado"
-        app:layout_constraintVertical_bias="0.147" />
+        app:layout_constraintVertical_bias="0.156" />
+
 
     <Button
         android:id="@+id/editGameButton"
@@ -119,25 +104,21 @@
         android:text="Guardar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintHorizontal_bias="0.437"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinFormato"
-        app:layout_constraintVertical_bias="0.427" />
-
-
+        app:layout_constraintVertical_bias="0.045" />
 
     <Spinner
         android:id="@+id/spinNombre"
         android:layout_width="231dp"
         android:layout_height="29dp"
         android:layout_marginStart="48dp"
-        android:layout_marginTop="43dp"
+        android:layout_marginBottom="56dp"
         app:layout_constraintBottom_toTopOf="@+id/spinPlataforma"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/nombre"
-        app:layout_constraintTop_toBottomOf="@+id/textView7"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintHorizontal_bias="0.058"
+        app:layout_constraintStart_toEndOf="@+id/nombre" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

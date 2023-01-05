@@ -43,7 +43,6 @@ class SwitchFragment : Fragment() {
 
 
 
-        var plataforma = "Nintendo Switch"
         var juegosTotales:Int? = baseDatos.juegosDao().filtroPlatCont("Nintendo Switch")
         var juegosCompletados:Int? = baseDatos.juegosDao().filtroJuegoPlat("Completado", "Nintendo Switch")
         var juegosPlatinados:Int? = baseDatos.juegosDao().filtroJuegoPlat("Platinado", "Nintendo Switch") //Son los juegos que se ha obtenido el 100% de los trofeos
@@ -52,7 +51,6 @@ class SwitchFragment : Fragment() {
         var juegosAbandonados = baseDatos.juegosDao().filtroJuegoPlat("Abandonado", "Nintendo Switch")
 
 
-        binding.nombreUsuario.text = plataforma
         binding.juegosTotales.text = juegosTotales.toString()
         binding.juegosCompletados.text = juegosCompletados.toString()
         binding.juegosPlatinados.text = juegosPlatinados.toString()

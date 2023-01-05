@@ -48,7 +48,7 @@ class HomeFragment : Fragment() {
 
 
 
-        val usuario = "Zhendork98"
+
 
         var juegosTotales:Int? = baseDatos.juegosDao().totalJuegos()
         var juegosCompletados:Int? = baseDatos.juegosDao().filtroJuego("Completado")
@@ -60,7 +60,6 @@ class HomeFragment : Fragment() {
 
 
 
-        binding.nombreUsuario.text = usuario
         binding.juegosTotales.text = juegosTotales.toString()
         binding.juegosCompletados.text = juegosCompletados.toString()
         binding.juegosPlatinados.text = juegosPlatinados.toString()

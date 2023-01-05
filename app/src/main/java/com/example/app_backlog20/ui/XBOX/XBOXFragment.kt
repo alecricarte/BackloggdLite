@@ -44,7 +44,6 @@ class XBOXFragment : Fragment() {
 
 
 
-        var plataforma = "Xbox One"
         var juegosTotales:Int? = baseDatos.juegosDao().filtroPlatCont("Xbox One")
         var juegosCompletados:Int? = baseDatos.juegosDao().filtroJuegoPlat("Completado", "Xbox One")
         var juegosPlatinados:Int? = baseDatos.juegosDao().filtroJuegoPlat("Platinado", "Xbox One") //Son los juegos que se ha obtenido el 100% de los trofeos
@@ -53,7 +52,6 @@ class XBOXFragment : Fragment() {
         var juegosAbandonados = baseDatos.juegosDao().filtroJuegoPlat("Abandonado", "Xbox One")
 
 
-        binding.nombreUsuario.text = plataforma
         binding.juegosTotales.text = juegosTotales.toString()
         binding.juegosCompletados.text = juegosCompletados.toString()
         binding.juegosPlatinados.text = juegosPlatinados.toString()

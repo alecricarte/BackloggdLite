@@ -7,114 +7,6 @@
     android:background="@drawable/fondo_def"
     tools:context=".ui.home.HomeFragment">
 
-    <TextView
-        android:id="@+id/nombreUsuario"
-        android:layout_width="200dp"
-        android:layout_height="25dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="49dp"
-        android:fontFamily="@font/concert_one"
-        android:text="TextView"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/juegos_totales"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-    <TextView
-        android:id="@+id/juegosCompletados"
-        android:layout_width="28dp"
-        android:layout_height="24dp"
-        android:layout_marginEnd="236dp"
-        android:layout_marginBottom="32dp"
-        android:fontFamily="@font/concert_one"
-        android:text="TextView"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/textView3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView2"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <TextView
-        android:id="@+id/juegosAplazados"
-        android:layout_width="33dp"
-        android:layout_height="18dp"
-        android:layout_marginTop="29dp"
-        android:layout_marginEnd="28dp"
-
-        android:fontFamily="@font/concert_one"
-        android:text="TextView"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/juegosAbandonados"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/juegosPendientes"
-        app:layout_constraintVertical_bias="0.032" />
-
-    <TextView
-        android:id="@+id/juegosPendientes"
-        android:layout_width="37dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="76dp"
-        android:layout_marginEnd="24dp"
-        android:fontFamily="@font/concert_one"
-        android:text="TextView"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/juegosPlatinados"
-        android:layout_width="36dp"
-        android:layout_height="18dp"
-        android:layout_marginTop="3dp"
-        android:layout_marginEnd="236dp"
-        android:layout_marginBottom="3dp"
-        android:fontFamily="@font/concert_one"
-        android:text="TextView"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="@+id/textView3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView3"
-        app:layout_constraintTop_toTopOf="@+id/juegosAbandonados" />
-
-    <TextView
-        android:id="@+id/juegos_totales"
-        android:layout_width="32dp"
-        android:layout_height="19dp"
-        android:layout_marginTop="79dp"
-        android:layout_marginEnd="236dp"
-        android:layout_marginBottom="80dp"
-        android:fontFamily="@font/concert_one"
-        android:text="Nivel 291"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/juegosPlatinados"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/juegosAbandonados"
-        android:layout_width="32dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="78dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginBottom="52dp"
-        android:fontFamily="@font/concert_one"
-        android:text="TextView"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/spinnerFiltro"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/juegosPendientes"
-        app:layout_constraintVertical_bias="0.0" />
-
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
@@ -140,88 +32,183 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="76dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginBottom="35dp"
-        android:fontFamily="@font/concert_one"
-        android:text="Juegos totales"
-        android:textSize="12dp"
-        app:layout_constraintBottom_toTopOf="@+id/juegosCompletados"
-        app:layout_constraintEnd_toStartOf="@+id/juegos_totales"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="85dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="7dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="24dp"
-        android:fontFamily="@font/concert_one"
-        android:text="Juegos completados"
-        android:textSize="12dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView3"
-        app:layout_constraintEnd_toStartOf="@+id/juegosCompletados"
-        app:layout_constraintHorizontal_bias="0.615"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="64dp"
-        android:layout_height="14dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="59dp"
-        android:layout_marginBottom="49dp"
-        android:fontFamily="@font/concert_one"
-        android:text="Platinos"
-        android:textSize="12dp"
-        app:layout_constraintBottom_toTopOf="@+id/spinnerFiltro"
-        app:layout_constraintEnd_toStartOf="@+id/juegosPlatinados"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/juegosCompletados" />
-
-    <TextView
         android:id="@+id/textView4"
-        android:layout_width="108dp"
-        android:layout_height="22dp"
-        android:layout_marginTop="76dp"
-        android:layout_marginEnd="32dp"
-        android:fontFamily="@font/concert_one"
+        android:layout_width="87dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="36dp"
+
         android:text="Juegos pendientes"
-        android:textSize="12dp"
+        android:textColor="@color/black"
+        android:textSize="14dp"
         app:layout_constraintEnd_toStartOf="@+id/juegosPendientes"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView5"
-        android:layout_width="113dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
-        android:fontFamily="@font/concert_one"
-        android:text="Juegos aplazados"
-        android:textSize="12dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView6"
-        app:layout_constraintEnd_toStartOf="@+id/juegosAplazados"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:layout_constraintVertical_bias="0.0" />
+        android:id="@+id/textView"
+        android:layout_width="87dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="52dp"
+
+        android:text="Juegos totales"
+        android:textColor="@color/black"
+        android:textSize="14dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="87dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="92dp"
+        android:layout_marginBottom="44dp"
+
+        android:text="Platinos"
+        android:textColor="@color/black"
+        android:textSize="14dp"
+        app:layout_constraintBottom_toTopOf="@+id/spinnerFiltro"
+        app:layout_constraintEnd_toStartOf="@+id/textView6"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.041" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="87dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="32dp"
+
+        android:text="Juegos completados"
+        android:textColor="@color/black"
+        android:textSize="14dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        app:layout_constraintEnd_toStartOf="@+id/juegosCompletados"
+        app:layout_constraintHorizontal_bias="0.615"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.971" />
+
+    <TextView
+        android:id="@+id/juegosAbandonados"
+        android:layout_width="35dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="28dp"
+
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.239" />
+
+    <TextView
+        android:id="@+id/juegosPendientes"
+        android:layout_width="35dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="28dp"
+
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView6"
-        android:layout_width="130dp"
-        android:layout_height="20dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="48dp"
-        android:fontFamily="@font/concert_one"
+        android:layout_width="87dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="64dp"
+
         android:text="Juegos abandonados"
-        android:textSize="12dp"
+        android:textColor="@color/black"
+        android:textSize="14dp"
         app:layout_constraintBottom_toTopOf="@+id/spinnerFiltro"
         app:layout_constraintEnd_toStartOf="@+id/juegosAbandonados" />
+
+    <TextView
+        android:id="@+id/juegosAplazados"
+        android:layout_width="35dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="29dp"
+        android:layout_marginEnd="28dp"
+
+
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/juegosAbandonados"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/juegosPendientes"
+        app:layout_constraintVertical_bias="0.131" />
+
+    <TextView
+        android:id="@+id/juegosCompletados"
+        android:layout_width="35dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="236dp"
+        android:layout_marginBottom="32dp"
+
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/juegos_totales"
+        android:layout_width="35dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="60dp"
+
+        android:text="Nivel 291"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/juegosCompletados"
+        app:layout_constraintEnd_toStartOf="@+id/textView4"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.59" />
+
+    <TextView
+        android:id="@+id/juegosPlatinados"
+        android:layout_width="35dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="236dp"
+        android:layout_marginBottom="3dp"
+
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/textView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.717"
+        app:layout_constraintStart_toEndOf="@+id/textView3"
+        app:layout_constraintTop_toTopOf="@+id/juegosAbandonados" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="87dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="36dp"
+
+        android:text="Juegos aplazados"
+        android:textColor="@color/black"
+        android:textSize="14dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView6"
+        app:layout_constraintEnd_toStartOf="@+id/juegosAplazados"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintVertical_bias="0.052" />
 
     <Button
         android:id="@+id/buttonFiltro"

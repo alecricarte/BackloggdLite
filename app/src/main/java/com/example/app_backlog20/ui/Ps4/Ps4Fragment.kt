@@ -29,7 +29,6 @@ class Ps4Fragment : Fragment() {
         savedInstanceState: Bundle?
 
     ): View {
-
         _binding = FragmentPs4Binding.inflate(inflater, container, false)
         val root: View = binding.root
         val baseDatos: JuegosBaseDatos = JuegosBaseDatos.getBaseDatos(requireContext())
@@ -41,7 +40,7 @@ class Ps4Fragment : Fragment() {
         var indOpcionFiltro:Int = binding.spinnerFiltro.selectedItemPosition
         var opcionFiltro:String = datosFiltro.get(indOpcionFiltro)
 
-        var plataforma = "PlayStation 4"
+
         var juegosTotales:Int? = baseDatos.juegosDao().filtroPlatCont("PlayStation 4")
         var juegosCompletados:Int? = baseDatos.juegosDao().filtroJuegoPlat("Completado", "PlayStation 4")
         var juegosPlatinados:Int? = baseDatos.juegosDao().filtroJuegoPlat("Platinado", "PlayStation 4") //Son los juegos que se ha obtenido el 100% de los trofeos
@@ -50,7 +49,7 @@ class Ps4Fragment : Fragment() {
         var juegosAbandonados = baseDatos.juegosDao().filtroJuegoPlat("Abandonado", "PlayStation 4")
 
 
-        binding.nombreUsuario.text = plataforma
+
         binding.juegosTotales.text = juegosTotales.toString()
         binding.juegosCompletados.text = juegosCompletados.toString()
         binding.juegosPlatinados.text = juegosPlatinados.toString()
