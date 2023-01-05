@@ -50,7 +50,7 @@ class GameEditFragment: Fragment() {
 
 
 
-        val datosEstado = arrayOf("Escoge un estado...","Pendiente", "Completado", "Aplazado", "Abandonado")
+        val datosEstado = arrayOf("Escoge un estado...","Pendiente","Platinado", "Completado", "Aplazado", "Abandonado")
         val estado = ArrayAdapter(requireActivity(), R.layout.simple_spinner_item, datosEstado)
         estado.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         estado.isEnabled(0)
