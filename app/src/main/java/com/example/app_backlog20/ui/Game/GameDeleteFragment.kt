@@ -32,13 +32,13 @@ class GameDeleteFragment: Fragment() {
         val root: View = binding.root
 
         val baseDatos = JuegosBaseDatos.getBaseDatos(requireContext())
-
-        var listNombre:MutableList<String> = baseDatos.juegosDao().listNombre()
-        listNombre.add(0,"Escoge un juego...")
+        //Le damos los datos al spinner de juego
+        var listNombre:MutableList<String> = baseDatos.juegosDao().listNombre() // MutableList para poder editarla
+        listNombre.add(0,"Escoge un juego...") //Añadimos un valor por defecto
         var nombres = ArrayAdapter(requireActivity(), R.layout.simple_spinner_item, listNombre)
         nombres.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         binding.spinNombre.adapter = nombres
-
+        // Le damos los datos al spinner de plataforma
         val datosPlataforma =
             arrayOf("Escoge la plataforma","PlayStation 4", "Xbox One", "Nintendo Switch")
         val plataforma =
@@ -47,19 +47,19 @@ class GameDeleteFragment: Fragment() {
         binding.spinPlataforma.adapter = plataforma
 
 
-
+        // Cuando pulsemos el botón se eliminará el juego de la base de datos, excepto si algún dato no se ha rellenado
         binding.deleteGameButton.setOnClickListener() {
             val nombre = binding.spinNombre.selectedItem.toString()
             val datoPlataforma: String = binding.spinPlataforma.selectedItem.toString()
-            val juego = baseDatos.juegosDao().busqueda(nombre, datoPlataforma)
+            val juego = baseDatos.juegosDao().busqueda(nombre, datoPlataforma) //Buscamos el juego en la BBDD
             if ( nombre == nombres.getItem(0) || datoPlataforma == datosPlataforma.get(0)) {
                 Toast.makeText(requireContext(), "Los datos no son válidos", Toast.LENGTH_SHORT)
 
             }
             else {
-                baseDatos.juegosDao().delete(juego)
+                baseDatos.juegosDao().delete(juego) //Eliminamos el juego de la BBDD
                 listNombre =baseDatos.juegosDao().listNombre()
-                listNombre.add(0,"Escoge un juego...")
+                listNombre.add(0,"Escoge un juego...") //Añadimos el valor por defecto nuevamente
                 nombres = ArrayAdapter(requireActivity(), R.layout.simple_spinner_item, listNombre)
                 nombres.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
                 binding.spinNombre.adapter = nombres

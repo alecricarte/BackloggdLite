@@ -13,12 +13,13 @@ abstract class JuegosBaseDatos : RoomDatabase() {
         @Volatile private var INSTANCE: JuegosBaseDatos? = null
         private const val NOMBRE_BASEDATOS = "juegos_basedatos"
 
+        // Creamos una BBDD a la que accederán todas las vistas
         fun getBaseDatos(context:Context): JuegosBaseDatos {
             val tempInstance = INSTANCE
             if (tempInstance != null){
                 return tempInstance
             }
-
+            //Todas las vistas accederán a la misma BBDD
             synchronized(this){
                 val instance = Room.databaseBuilder(context,
                 JuegosBaseDatos::class.java, NOMBRE_BASEDATOS).allowMainThreadQueries()

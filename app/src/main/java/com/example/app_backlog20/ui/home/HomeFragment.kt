@@ -73,6 +73,7 @@ class HomeFragment : Fragment() {
         homeAdapter.juegos = baseDatos.juegosDao().getAll()
         homeList.layoutManager = LinearLayoutManager(requireContext())
 
+        //Cuando le damos al botón de filtrar, aparecerán solo los juegos que cumplan las condiciones
         binding.buttonFiltro.setOnClickListener(){
             val estado:String = binding.spinnerFiltro.selectedItem.toString()
             if (estado=="Todos") homeAdapter.juegos = baseDatos.juegosDao().getAll()

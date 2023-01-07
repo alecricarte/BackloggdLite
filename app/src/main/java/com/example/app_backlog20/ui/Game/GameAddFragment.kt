@@ -34,7 +34,7 @@ class GameAddFragment: Fragment() {
 
         val baseDatos = JuegosBaseDatos.getBaseDatos(requireContext())
 
-
+        //Añadimos los datos de plataforma al spinner
         val datosPlataforma =
             arrayOf("Escoge la plataforma...","PlayStation 4","Xbox One", "Nintendo Switch")
         val plataforma =
@@ -44,7 +44,7 @@ class GameAddFragment: Fragment() {
         binding.spinPlataforma.adapter = plataforma
 
 
-
+        //Añadimos los datos de estado al spinner
         val datosEstado = arrayOf("Escoge un estado...","Pendiente", "Completado","Platinado", "Aplazado", "Abandonado")
         val estado = ArrayAdapter(requireActivity(), R.layout.simple_spinner_item, datosEstado)
         estado.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -52,7 +52,7 @@ class GameAddFragment: Fragment() {
 
         binding.spinEstado.adapter = estado
 
-
+        //Añadimos los datos al spinner de formato
         val datosFormato = arrayOf("Escoge un formato...", "Físico", "Digital", "Suscripción")
         val formato = ArrayAdapter(requireActivity(), R.layout.simple_spinner_item, datosFormato)
         formato.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -60,7 +60,7 @@ class GameAddFragment: Fragment() {
         binding.spinFormato.adapter = formato
 
 
-
+        //Al pulsar el botón se añadirá el juego a la BBDD siempre que esten los campos rellenados
         binding.addGameButton.setOnClickListener(){
             val nombre = binding.editTextNombre.text.toString().trim()
             val datoPlataforma:String = binding.spinPlataforma.selectedItem.toString()
@@ -72,7 +72,7 @@ class GameAddFragment: Fragment() {
                 || datoFormato == datosFormato.get(0)) {
                 Toast.makeText(requireContext(), "Los datos no son validos", Toast.LENGTH_SHORT)
             }else{
-                baseDatos.juegosDao().insert(juego)
+                baseDatos.juegosDao().insert(juego) //Añadimos el objeto a la BBDD y reseteamos los valores de las entradas
                 binding.editTextNombre.getText().clear()
                 binding.spinEstado.setSelection(0)
                 binding.spinPlataforma.setSelection(0)

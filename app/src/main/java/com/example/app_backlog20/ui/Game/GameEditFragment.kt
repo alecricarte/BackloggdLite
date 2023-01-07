@@ -77,7 +77,7 @@ class GameEditFragment: Fragment() {
                 Toast.makeText(requireContext(), "Los datos no son válidos", Toast.LENGTH_SHORT)
             }
             else{
-                baseDatos.juegosDao().update(juego)
+                baseDatos.juegosDao().update(juego) //Actualizamos los datos del objeto de la BBDD
                 binding.spinNombre.setSelection(0)
                 binding.spinEstado.setSelection(0)
                 binding.spinPlataforma.setSelection(0)

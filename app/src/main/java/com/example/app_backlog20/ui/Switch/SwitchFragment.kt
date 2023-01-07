@@ -64,6 +64,7 @@ class SwitchFragment : Fragment() {
         switchAdapter.juegos = baseDatos.juegosDao().filtroPlat("Nintendo Switch")
         switchList.layoutManager = LinearLayoutManager(requireContext())
 
+        //Cuando le damos al botón de filtrar, aparecerán solo los juegos que cumplan las condiciones
         binding.buttonFiltro.setOnClickListener(){
             val estado:String = binding.spinnerFiltro.selectedItem.toString()
             if (estado=="Todos") switchAdapter.juegos = baseDatos.juegosDao().getAll()
