@@ -54,11 +54,11 @@ class GameDeleteFragment: Fragment() {
             val juego = baseDatos.juegosDao()
                 .busqueda(nombre, datoPlataforma) //Buscamos el juego en la BBDD
             if (juego == null) {
-                Toast.makeText(requireContext(), "El juego no está registrado", Toast.LENGTH_SHORT)
+                Toast.makeText(requireContext(), "El juego no está registrado", Toast.LENGTH_SHORT).show()
             } else {
 
                 if (nombre == nombres.getItem(0) || datoPlataforma == datosPlataforma.get(0)) {
-                    Toast.makeText(requireContext(), "Los datos no son válidos", Toast.LENGTH_SHORT)
+                    Toast.makeText(requireContext(), "Los datos no son válidos", Toast.LENGTH_SHORT).show()
 
                 } else {
                     baseDatos.juegosDao().delete(juego) //Eliminamos el juego de la BBDD
@@ -76,8 +76,7 @@ class GameDeleteFragment: Fragment() {
                     Toast.makeText(
                         requireContext(),
                         "Se han actualizado los datos",
-                        Toast.LENGTH_SHORT
-                    )
+                        Toast.LENGTH_SHORT).show()
 
                 }
             }

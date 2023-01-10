@@ -73,12 +73,12 @@ class GameEditFragment: Fragment() {
             val datoFormato: String = binding.spinFormato.selectedItem.toString()
             val juego = Juego(nombre, datoPlataforma, datoEstado, datoFormato)
             if (baseDatos.juegosDao().busqueda(nombre, datoPlataforma) == null) {
-                Toast.makeText(requireContext(), "El juego no está registrado", Toast.LENGTH_SHORT)
+                Toast.makeText(requireContext(), "El juego no está registrado", Toast.LENGTH_SHORT).show()
             } else {
                 if (datoEstado == datosEstado.get(0) || nombre == nombres.getItem(0) ||
                     datoPlataforma == datosPlataforma.get(0) || datoFormato == datosFormato.get(0)
                 ) {
-                    Toast.makeText(requireContext(), "Los datos no son válidos", Toast.LENGTH_SHORT)
+                    Toast.makeText(requireContext(), "Los datos no son válidos", Toast.LENGTH_SHORT).show()
                 } else {
                     baseDatos.juegosDao()
                         .update(juego) //Actualizamos los datos del objeto de la BBDD
@@ -89,8 +89,7 @@ class GameEditFragment: Fragment() {
                     Toast.makeText(
                         requireContext(),
                         "Se han actualizado los datos",
-                        Toast.LENGTH_SHORT
-                    )
+                        Toast.LENGTH_SHORT).show()
 
                 }
             }
