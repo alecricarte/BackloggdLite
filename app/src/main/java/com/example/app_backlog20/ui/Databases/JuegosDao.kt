@@ -27,7 +27,10 @@ interface JuegosDao {
     fun filtroEst (estado:String): List<Juego>
 
     @Query ("SELECT * FROM juego WHERE nombre LIKE (:nombre)" + "AND plataforma LIKE (:plataforma)")
-    fun busqueda (nombre:String, plataforma: String):Juego
+    fun busqueda (nombre:String, plataforma: String):Juego?
+
+    @Query ("SELECT * FROM juego WHERE estado LIKE (:estado)" + "AND plataforma LIKE (:plataforma)")
+    fun filtroEstPlat (estado: String, plataforma: String): List<Juego>
 
     @Query ("SELECT nombre FROM juego")
     fun listNombre (): MutableList<String>
@@ -36,10 +39,10 @@ interface JuegosDao {
     fun insert(juego: Juego)
 
     @Update
-    fun update(juego: Juego)
+    fun update(juego: Juego?)
 
     @Delete
-    fun delete(juego: Juego)
+    fun delete(juego: Juego?)
 
 }
 

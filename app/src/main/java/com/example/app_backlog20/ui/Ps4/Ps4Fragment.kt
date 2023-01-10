@@ -66,8 +66,9 @@ class Ps4Fragment : Fragment() {
         //Cuando le damos al botón de filtrar, aparecerán solo los juegos que cumplan las condiciones
         binding.buttonFiltro.setOnClickListener(){
             val estado:String = binding.spinnerFiltro.selectedItem.toString()
-            if (estado=="Todos") ps4Adapter.juegos = baseDatos.juegosDao().getAll()
-            else ps4Adapter.juegos = baseDatos.juegosDao().filtroEst(estado)
+            if (estado=="Todos") ps4Adapter.juegos = baseDatos.juegosDao().filtroPlat("PlayStation 4")
+            else ps4Adapter.juegos = baseDatos.juegosDao().filtroEstPlat(estado, "PlayStation 4")
+
 
             ps4List.layoutManager = LinearLayoutManager(requireContext())
         }

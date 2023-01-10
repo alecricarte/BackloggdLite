@@ -51,22 +51,35 @@ class GameDeleteFragment: Fragment() {
         binding.deleteGameButton.setOnClickListener() {
             val nombre = binding.spinNombre.selectedItem.toString()
             val datoPlataforma: String = binding.spinPlataforma.selectedItem.toString()
-            val juego = baseDatos.juegosDao().busqueda(nombre, datoPlataforma) //Buscamos el juego en la BBDD
-            if ( nombre == nombres.getItem(0) || datoPlataforma == datosPlataforma.get(0)) {
-                Toast.makeText(requireContext(), "Los datos no son válidos", Toast.LENGTH_SHORT)
+            val juego = baseDatos.juegosDao()
+                .busqueda(nombre, datoPlataforma) //Buscamos el juego en la BBDD
+            if (juego == null) {
+                Toast.makeText(requireContext(), "El juego no está registrado", Toast.LENGTH_SHORT)
+            } else {
 
-            }
-            else {
-                baseDatos.juegosDao().delete(juego) //Eliminamos el juego de la BBDD
-                listNombre =baseDatos.juegosDao().listNombre()
-                listNombre.add(0,"Escoge un juego...") //Añadimos el valor por defecto nuevamente
-                nombres = ArrayAdapter(requireActivity(), R.layout.simple_spinner_item, listNombre)
-                nombres.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-                binding.spinNombre.adapter = nombres
-                binding.spinNombre.setSelection(0)
-                binding.spinPlataforma.setSelection(0)
-                Toast.makeText(requireContext(), "Se han actualizado los datos", Toast.LENGTH_SHORT)
+                if (nombre == nombres.getItem(0) || datoPlataforma == datosPlataforma.get(0)) {
+                    Toast.makeText(requireContext(), "Los datos no son válidos", Toast.LENGTH_SHORT)
 
+                } else {
+                    baseDatos.juegosDao().delete(juego) //Eliminamos el juego de la BBDD
+                    listNombre = baseDatos.juegosDao().listNombre()
+                    listNombre.add(
+                        0,
+                        "Escoge un juego..."
+                    ) //Añadimos el valor por defecto nuevamente
+                    nombres =
+                        ArrayAdapter(requireActivity(), R.layout.simple_spinner_item, listNombre)
+                    nombres.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+                    binding.spinNombre.adapter = nombres
+                    binding.spinNombre.setSelection(0)
+                    binding.spinPlataforma.setSelection(0)
+                    Toast.makeText(
+                        requireContext(),
+                        "Se han actualizado los datos",
+                        Toast.LENGTH_SHORT
+                    )
+
+                }
             }
         }
 

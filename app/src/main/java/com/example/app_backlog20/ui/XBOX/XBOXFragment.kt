@@ -68,8 +68,8 @@ class XBOXFragment : Fragment() {
         //Cuando le damos al botón de filtrar, aparecerán solo los juegos que cumplan las condiciones
         binding.buttonFiltro.setOnClickListener(){
             val estado:String = binding.spinnerFiltro.selectedItem.toString()
-            if (estado=="Todos") xoneAdapter.juegos = baseDatos.juegosDao().getAll()
-            else xoneAdapter.juegos = baseDatos.juegosDao().filtroEst(estado)
+            if (estado=="Todos") xoneAdapter.juegos = baseDatos.juegosDao().filtroPlat("Xbox One")
+            else xoneAdapter.juegos = baseDatos.juegosDao().filtroEstPlat(estado, "Xbox One")
 
             xoneList.layoutManager = LinearLayoutManager(requireContext())
         }
